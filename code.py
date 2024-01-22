@@ -1,6 +1,7 @@
 from random import choice
-# function to check if 3 symbols match
-def isSame(row):
+# function to check if all items in an array match
+# input an array to check
+def is_same(row):
     temp = True
     symbol = row[0]
     for i in row:
@@ -8,7 +9,7 @@ def isSame(row):
             temp = False
     return(temp)
 
-# generate field
+# generate a random 3 by 3 field of either "X" or "O"
 options = ("X", "O")
 field = [[0,0,0],[0,0,0],[0,0,0]]
 i = 0
@@ -22,32 +23,32 @@ while i < 3:
 # check for match in rows
 trinity = False
 for row in field:
-    if isSame(row) == True:
+    if is_same(row) == True:
         trinity = True
         break
 
 # check for match in columns if there is none in rows
 if trinity == False:
-    newField = [[0,0,0],[0,0,0],[0,0,0]]
-    colCoord = 0
-    while colCoord < 3:
-        rowCoord = 0
-        while rowCoord < 3:
-            newField[colCoord][rowCoord] = field[rowCoord][colCoord]
-            rowCoord += 1
-        colCoord += 1
+    new_field = [[0,0,0],[0,0,0],[0,0,0]]
+    collumn_coord = 0
+    while collumn_coord < 3:
+        row_coord = 0
+        while row_coord < 3:
+            newField[collumn_coord][row_coord] = field[row_coord][collumn_coord]
+            row_coord += 1
+        collumn_coord += 1
     
-    for column in newField:
-        if isSame(column) == True:
+    for collumn in newField:
+        if is_same(collumn) == True:
             trinity = True
             break
 
-# check for match in diagonal
+# check for match in diagonal (only checks if 3 symbols match)
 if trinity == False:
     diagonals = [[field[0][0], field[1][1], field[2][2] ],
                  [field[0][2] , field[1][1], field[2][0]]]
     for diag in diagonals:
-        if isSame(diag) == True:
+        if is_same(diag) == True:
             trinity = True
             break
 
