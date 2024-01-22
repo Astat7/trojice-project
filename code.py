@@ -1,6 +1,7 @@
 from random import choice
 # function to check if all items in an array match
-# input an array to check
+# an array on input
+# outputs a boolean: True if all items match
 def is_same(row):
     temp = True
     symbol = row[0]
