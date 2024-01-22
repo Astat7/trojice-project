@@ -1,2 +1,4 @@
 # trojice-project
-Generates 3 by 3 field and checks if a row or collums match
+This code generates a 3x3 field and randomly fills it with either "X" or "O".
+Then it checks if there are matching symbols inb a row, collumn or a diagonal.
+Prints the result and the field.
