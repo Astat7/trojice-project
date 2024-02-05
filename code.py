@@ -1,8 +1,24 @@
 from random import choice
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+
+
 # function to check if all items in an array match
-# an array on input
-# outputs a boolean: True if all items match
+# input an array to check
 def is_same(row):
+    """ 
+
+    >>> is_same(["X", "O", "X"])
+    False
+
+    >>> is_same(["X", "X", "X"])
+    True
+
+    """
+
+
+
     temp = True
     symbol = row[0]
     for i in row:
@@ -35,11 +51,11 @@ if trinity == False:
     while collumn_coord < 3:
         row_coord = 0
         while row_coord < 3:
-            newField[collumn_coord][row_coord] = field[row_coord][collumn_coord]
+            new_field[collumn_coord][row_coord] = field[row_coord][collumn_coord]
             row_coord += 1
         collumn_coord += 1
     
-    for collumn in newField:
+    for collumn in new_field:
         if is_same(collumn) == True:
             trinity = True
             break
